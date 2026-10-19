@@ -26,6 +26,16 @@ header{
     padding: 20px 100px;
 }
 
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logo img{
+    width: 50px;
+}
+
 .header-logo p{
     font-size: 1.2rem;
     font-weight: 500;
@@ -56,13 +66,17 @@ header{
     width: 200px;
     height: 60px;
     background-color: #0a3d34;
-    color: white;
     border: none;
     border-radius: 10px;
     font-size: 1.2rem;
 }
 
-.material-symbols-outlined, #hamburger-menu{
+.header-btn a, .main-btn a, .browse-recipe-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+#hamburger-menu{
     font-size: 30px;
     color: #0a3d34;
     background-color: #e1ece7;
@@ -189,6 +203,128 @@ footer{
     padding: 30px 0;
 }
 
+
+/* ########### recipe page styling */
+
+.recipe-cta{
+    width: 70%;
+}
+
+
+.recipe-hero p{
+    font-size: 25px;
+}
+
+.recipe-cta h1{
+    font-size: 4rem;
+}
+
+.menu{
+    width: 80%;
+    padding: 50px 0;
+}
+
+.menu-filter{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-filter{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+select, .search>input{
+    padding: 20px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    outline: none;
+}
+
+.menu-items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 30px 0 0;
+    gap: 30px;
+}
+
+.menu-card1, .menu-card2, .menu-card3, .menu-card4, .menu-card5, .menu-card6, .menu-card7, .menu-card8{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.card1-image, .card2-image, .card3-image, .card4-image, .card5-image, .card6-image, .card7-image, .card8-image{
+    width: 100%;
+}
+
+.card1-image img, .card2-image img, .card3-image img, .card4-image img, .card5-image img, .card6-image img, .card7-image img, .card8-image img{
+    width: 100%;
+    border-radius: 15px;
+} 
+
+.card1-info h3, .card2-info h3, .card3-info h3, .card4-info h3, .card5-info h3, .card6-info h3, .card7-info h3, .card8-info h3{
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #0a3d34;
+    margin-bottom: 10px;
+}
+
+.card1-info p, .card2-info p, .card3-info p, .card4-info p, .card5-info p, .card5-info p, .card6-info p, .card7-info p, .card8-info p{
+    font-size: 20px;
+    color: #0a3d34;
+}
+
+.card1-info .icons, .card2-info .icons, .card3-info .icons, .card4-info .icons, .card5-info .icons, .card6-info .icons, .card7-info .icons, .card8-info .icons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: ; */
+    justify-content: space-between;
+    padding: 20px 0;
+
+    .servings, .prep, .cook-time{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .menu-icons{
+        color: #0a3d34;
+    }
+}
+
+.menu-cta{
+    width: 100%;
+    padding: 18px;
+    /* margin-top: 20px; */
+    background-color: #0a3d34;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+.recipe-footer{
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+
 /* ############# tablet version ##################3 */
 @media(max-width:1109px){
 
@@ -249,6 +385,15 @@ footer{
     .hero-cta h1, .browse-recipe h2{
         line-height: 1;
     }
+
+    .menu{
+        width: 90%;
+    }
+
+    .menu-items{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
 }
 
 
@@ -258,6 +403,21 @@ footer{
         text-align: center;
         padding: 50px;
     }
+
+    .menu-items{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+    }
+    
+    .menu-filter{
+        flex-direction: column-reverse;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .select, .search>input, .prep-time, .cook-time1{
+        padding: 15px 20px;
+    }
 }
 
 @media(max-width:475px){
@@ -265,18 +425,38 @@ footer{
     header{
         padding: 20px 20px;
     }
+
+    .recipe-hero{
+        padding-top: 50px;
+    }
     
     .hero-cta h1{
         font-size: 3rem;
+    }
+
+    .recipe-cta h1{
+        font-size: 2.5rem;
     }
 
     .hero-cta p, .recipe-info-text p{
         font-size: 20px;
     }
 
+    .recipe-cta p{
+        font-size: 18px;
+    }
+
     .hero-info h2, .recipe-info h2, .browse-recipe h2{
         font-size: 2.2rem;
         font-weight: 700;
         color: #0a3d34;
+    }
+
+    .card1-info h3, .card2-info h3, .card3-info h3, .card4-info h3, .card5-info h3, .card6-info h3, .card7-info h3, .card8-info h3{
+        font-size: 1.2rem;
+    }
+
+    .card1-info p, .card2-info p, .card3-info p, .card4-info p, .card5-info p, .card5-info p, .card6-info p, .card7-info p, .card8-info p{
+        font-size: 12px;
     }
 }
