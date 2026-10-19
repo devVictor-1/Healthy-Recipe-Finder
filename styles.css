@@ -1,0 +1,275 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: #f6f5f1;
+    width: 100%;
+    /* height: 100vh; */
+    font-family: "Heebo", sans-serif;
+    /* font-weight: ; */
+    font-style: normal;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 20px 100px;
+}
+
+.header-logo p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #0a3d34;
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar ul li{
+    list-style-type: none;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #0a3d34;;
+}
+
+.navbar ul li a:hover, 
+.navbar ul li a.active{
+    border-bottom: 2px solid orange;
+}
+
+.header-btn, .main-btn, .browse-recipe-btn{
+    width: 200px;
+    height: 60px;
+    background-color: #0a3d34;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.material-symbols-outlined, #hamburger-menu{
+    font-size: 30px;
+    color: #0a3d34;
+    background-color: #e1ece7;
+    padding: 7px;
+    border-radius: 5px;
+    display: none;
+}
+
+.hero{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 90px;
+    border-bottom: 1px solid black;
+}
+
+.hero-cta h1{
+    font-size: 5rem;
+    font-weight: 700;
+    color: #0a3d34;
+    margin-bottom: 20px;
+}
+
+.hero-cta p{
+    font-size: 25px;
+    color: #0a3d34;
+    margin-bottom: 50px;
+}
+
+.hero-image{
+    padding-top: 80px;
+}
+
+.hero-image img{
+    width: 100%;
+    border-radius: 20px;
+    border: white 10px solid;
+}
+
+.hero-info{
+    padding-top: 50px;
+}
+
+.hero-info h2, .recipe-info h2, .browse-recipe h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0a3d34;
+}
+
+.hero-info-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7rem;
+    text-align: left;
+    padding: 50px 0 100px;
+}
+
+.hero-info-card h3{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #0a3d34;
+}
+
+.hero-info-card p, .browse-recipe p{
+    font-size: 20px;
+    color: #0a3d34;
+}
+
+.recipe-info{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+    gap: 5rem;
+}
+
+.recipe-info-text{
+    width: 50%;
+    text-align: left;
+}
+
+.recipe-info-text p{
+    font-size: 25px;
+    color: #0a3d34;
+    margin-top: 20px;
+}
+
+.recipe-info-image{
+    width: 50%;
+}
+
+.recipe-info-image img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.browse-recipe{
+    width: 80%;
+    background-color: #e7eee7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0;
+    margin: 80px 0 0;
+
+    border-radius: 20px;
+}
+
+.browse-recipe-btn{
+    margin-top: 30px;
+}
+
+footer{
+    padding: 30px 0;
+}
+
+/* ############# tablet version ##################3 */
+@media(max-width:1109px){
+
+    header{
+        padding: 20px 50px;
+    }
+    .navbar, .header-btn{
+        display: none;
+    }
+
+    .material-symbols-outlined, #hamburger-menu{
+        display: block;
+    }
+
+    .hero{
+        width: 90%;
+        text-align: left;
+        justify-content: left;
+    }
+
+    .hero-cta{
+        width: 100%;
+    }
+
+    .hero-cta h1{
+        font-size: 4rem;
+    }
+
+    .hero-image{
+        padding-top: 50px;
+    }
+
+    .hero-info{
+        width: 100%;
+    }
+
+    .hero-info-card{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+    }
+
+    .recipe-info{
+        width: 90%;
+        display: block;
+    }
+    .recipe-info-text, .recipe-info-image{
+        width: 100%;
+    }
+
+    .recipe-info-image{
+        margin-top: 40px;
+    }
+
+    .browse-recipe{
+        width: 90%;
+    }
+}
+
+
+/* ############## large mobile view ################ */
+@media(max-width:789px){
+    .browse-recipe{
+        text-align: center;
+        padding: 50px;
+    }
+}
+
+@media(max-width:475px){
+
+    header{
+        padding: 20px 20px;
+    }
+    
+    .hero-cta h1{
+        font-size: 3rem;
+    }
+
+    .hero-cta p, .recipe-info-text p{
+        font-size: 20px;
+    }
+
+    .hero-info h2, .recipe-info h2, .browse-recipe h2{
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #0a3d34;
+    }
+    
+}
